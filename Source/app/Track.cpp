@@ -22,7 +22,6 @@ namespace audioplayer {
         });
         soloButton.setTooltip("Solo");
         soloButton.onClick = [this](){
-            //std::cout << "Solo track " << getTrackIndex() << std::endl;
             processor.setSolo(soloButton.getToggleState());
             if(soloMuteCallback)
                 soloMuteCallback(soloButton.getToggleState(), muteButton.getToggleState());
@@ -43,7 +42,6 @@ namespace audioplayer {
         });
         muteButton.setTooltip("Mute");
         muteButton.onClick = [this](){
-            //std::cout << "Mute track " << getTrackIndex() << std::endl;
             processor.setMute(muteButton.getToggleState());
             if(soloMuteCallback)
                 soloMuteCallback(soloButton.getToggleState(), muteButton.getToggleState());
@@ -54,7 +52,6 @@ namespace audioplayer {
         volSlider.setLabel("Vol.");
         volSlider.setValueFormatter(new SliderWithLabel::GainValueFormatter());
         volSlider.setOnSliderValueChanged([this](double value){
-            std::cout << "Gain track " << getTrackIndex() << " = " << value << std::endl;
             processor.setGain(value);
         });
         addAndMakeVisible(volSlider);
@@ -62,7 +59,6 @@ namespace audioplayer {
         panSlider.setLabel("Pan.");
         panSlider.setValueFormatter(new SliderWithLabel::PanValueFormatter());
         panSlider.setOnSliderValueChanged([this](double value){
-            std::cout << "Pan track " << getTrackIndex() << " = " << value << std::endl;
             processor.setPan(value);
         });
         addAndMakeVisible(panSlider);

@@ -15,7 +15,6 @@ namespace audioplayer {
         volSlider.setLabel("Vol.");
         volSlider.setValueFormatter(new SliderWithLabel::GainValueFormatter());
         volSlider.setOnSliderValueChanged([this](double value){
-            std::cout << "Gain Master track = " << value << std::endl;
             processor.setGain(value);
         });
         addAndMakeVisible(volSlider);
@@ -24,7 +23,6 @@ namespace audioplayer {
         panSlider.setLabel("Pan.");
         panSlider.setValueFormatter(new SliderWithLabel::PanValueFormatter());
         panSlider.setOnSliderValueChanged([this](double value){
-            std::cout << "Pan Master track = " << value << std::endl;
             processor.setPan(value);
         });
         addAndMakeVisible(panSlider);
