@@ -29,9 +29,10 @@ namespace audioplayer {
                               
     private:
         void updateAllTracksBypass();
-        
+        void addTrack(const juce::String &filePath = "");
+                              
     private:
-        std::vector<std::shared_ptr<audioplayer::Track>> tracks;
+        juce::OwnedArray<audioplayer::Track> tracks;
         audioplayer::Toolbar toolbar;
         audioplayer::MasterTrack masterTrack;
         

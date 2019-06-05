@@ -37,7 +37,9 @@ namespace audioplayer {
         audioplayer::TrackProcessor &getProcessor();
         
         void setOnSoloMuteChanged(const std::function<void(bool, bool)> &);
- 
+        
+        static juce::Colour generateColour();
+    
     public:
         void paint(Graphics&) override;
         void resized() override;

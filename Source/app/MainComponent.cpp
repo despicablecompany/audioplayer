@@ -39,28 +39,6 @@ namespace audioplayer {
         masterTrack.setAlwaysOnTop(true);
         addAndMakeVisible(masterTrack);
         
-        // Tracks
-        std::array<std::tuple<juce::String, juce::Colour, juce::String>, 4> track_infos {{
-            std::make_tuple("Voice", juce::Colour(0xff22bd82), ""),
-            std::make_tuple("Other", juce::Colour(0xff009eff), ""),
-            std::make_tuple("Bass",  juce::Colour(0xff6b4ac2), ""),
-            std::make_tuple("Drums", juce::Colour(0xffba4fae), ""),
-        }};
-        
-        auto index = 0;
-        for(const auto &track_info : track_infos) {
-            auto track = std::make_shared<Track>();
-            track->setTrackIndex(index++);
-            track->setTrackName(std::get<0>(track_info));
-            track->setTrackColour(std::get<1>(track_info));
-            track->setFilePath(std::get<2>(track_info));
-            track->setOnSoloMuteChanged([this](bool, bool){
-                updateAllTracksBypass();
-            });
-            tracks.push_back(track);
-            addAndMakeVisible(track.get());
-        }
-        
         // Global size
         setSize (800, 600);
         
@@ -121,6 +99,27 @@ namespace audioplayer {
     
     void MainComponent::paint(Graphics& g) {
         g.fillAll(Colour(17, 19, 21));
+        
+        // Display info for drag n drop if no tracks
+        if(tracks.size() == 0) {
+            auto text_rect_w = std::min(getWidth() - 16, 400);
+            auto text_rect_h = std::min(getHeight() - 16 - toolbar.getSizeHint().second - masterTrack.getSizeHint().second, 200);
+            Rectangle<int> text_rect((getWidth() - text_rect_w) / 2, (getHeight() - text_rect_h) / 2, text_rect_w, text_rect_h);
+            g.setFont(juce::Font("SF Pro Text", 17, juce::Font::FontStyleFlags::plain));
+            g.setColour(juce::Colour(0xff818A97));
+            g.drawText("Drag and drop files here to open them as tracks.", text_rect, juce::Justification::centred);
+            
+            g.setColour(juce::Colour(0x70818A97));
+            juce::Path path;
+            auto stroke_thickness = 1.0;
+            path.addRoundedRectangle(text_rect.getX() - stroke_thickness / 2, text_rect.getY() - stroke_thickness / 2, text_rect.getWidth()  + stroke_thickness, text_rect.getHeight() + stroke_thickness, 8);
+            juce::PathStrokeType stroke_type(stroke_thickness, juce::PathStrokeType::JointStyle::curved, juce::PathStrokeType::EndCapStyle::rounded);
+            float dash_length[2];
+            dash_length[0] = 4;
+            dash_length[1] = 8;
+            stroke_type.createDashedStroke(path, path, dash_length, 2);
+            g.strokePath(path, stroke_type);
+        }
     }
     
     void MainComponent::resized() {
@@ -159,6 +158,27 @@ namespace audioplayer {
     }
     
     void MainComponent::filesDropped(const juce::StringArray &files, int x, int y) {
-        // TODO Add a track for the file
+        if(!files.isEmpty()){
+            for (const auto &s : files) {
+                if (s.endsWithIgnoreCase(".wav"))
+                    addTrack(s);
+            }
+        }
+    }
+    
+    void MainComponent::addTrack(const juce::String &filePath) {
+        auto track = new Track();
+        auto track_index = tracks.size();
+        track->setTrackIndex(track_index);
+        auto track_name = filePath.isEmpty() ? juce::String("Track ") + juce::String(track_index + 1) : juce::File(filePath).getFileNameWithoutExtension();
+        track->setTrackName(track_name);
+        track->setTrackColour(Track::generateColour());
+        track->setFilePath(filePath);
+        track->setOnSoloMuteChanged([this](bool, bool){
+            updateAllTracksBypass();
+        });
+        tracks.add(track);
+        addAndMakeVisible(track);
+        resized();
     }
 } // namespace audioplayer

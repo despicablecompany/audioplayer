@@ -84,7 +84,12 @@ namespace audioplayer {
     
     void Track::filesDropped(const juce::StringArray &files, int x, int y) {
         if(!files.isEmpty()){
-            setFilePath(files[0]);
+            for(const auto &f : files) {
+                if (f.endsWithIgnoreCase(".wav")) {
+                    setFilePath(f);
+                    break;
+                }
+            }
         }
     }
     
@@ -250,5 +255,18 @@ namespace audioplayer {
     
     void Track::setOnSoloMuteChanged(const std::function<void(bool, bool)> &callback) {
         soloMuteCallback = callback;
+    }
+    
+    juce::Colour Track::generateColour() {
+        static const std::array<juce::Colour, 4> colours {{
+            juce::Colour(0xff22bd82),
+            juce::Colour(0xff009eff),
+            juce::Colour(0xff6b4ac2),
+            juce::Colour(0xffba4fae),
+        }};
+        static unsigned int colour_index = 0;
+        auto c = colours.at(colour_index);
+        colour_index = (colour_index + 1) % colours.size();
+        return c;
     }
 } // namespace audioplayer
