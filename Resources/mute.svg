@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>icon/mute</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/mute" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M4.29289322,11 L4,11 C3.448,11 3,10.552 3,10 L3,6 C3,5.448 3.448,5 4,5 L7.453,5 L10.75,2 L11,2 L11,4.29289322 L13.6464466,1.64644661 C13.8417088,1.45118446 14.1582912,1.45118446 14.3535534,1.64644661 C14.5488155,1.84170876 14.5488155,2.15829124 14.3535534,2.35355339 L2.35355339,14.3535534 C2.15829124,14.5488155 1.84170876,14.5488155 1.64644661,14.3535534 C1.45118446,14.1582912 1.45118446,13.8417088 1.64644661,13.6464466 L4.29289322,11 Z M11,7.10710678 L11,14 L10.75,14 L7.453,11 L7.10710678,11 L11,7.10710678 Z" id="Shape" fill="#FFFFFF"></path>
+    </g>
+</svg>

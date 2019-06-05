@@ -1,0 +1,35 @@
+# XCode
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+build/*
+*.xcodeproj/*
+!*.xcodeproj/project.pbxproj
+!*.xcodeproj/xcshareddata/
+!*.xcworkspace/contents.xcworkspacedata
+/*.gcno
+**/xcshareddata/WorkspaceSettings.xcsettings
+
+# Mac OS X
+.DS_Store
+**/.DS*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# Juce
+**/Builds
+**/JuceLibraryCode
+**/!JuceLibraryCode/AppConfig.h
+
+# VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history

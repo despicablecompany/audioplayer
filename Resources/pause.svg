@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>icon/pause</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/pause" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M11,22 C17.0751322,22 22,17.0751322 22,11 C22,4.92486775 17.0751322,0 11,0 C4.92486775,0 0,4.92486775 0,11 C0,17.0751322 4.92486775,22 11,22 Z M11,21 C5.4771525,21 1,16.5228475 1,11 C1,5.4771525 5.4771525,1 11,1 C16.5228475,1 21,5.4771525 21,11 C21,16.5228475 16.5228475,21 11,21 Z" id="Oval" fill="#FFFFFF"></path>
+        <rect id="Rectangle" fill="#FFFFFF" x="8" y="6" width="2" height="10"></rect>
+        <rect id="Rectangle" fill="#FFFFFF" x="12" y="6" width="2" height="10"></rect>
+    </g>
+</svg>

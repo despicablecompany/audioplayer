@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 55.1 (78136) - https://sketchapp.com -->
+    <title>icon/forward</title>
+    <desc>Created with Sketch.</desc>
+    <g id="icon/forward" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#FFFFFF" transform="translate(11.500000, 8.000000) rotate(-180.000000) translate(-11.500000, -8.000000) " x="11" y="3" width="1" height="10"></rect>
+        <polygon id="Path-3" fill="#FFFFFF" transform="translate(7.500000, 8.000000) rotate(-180.000000) translate(-7.500000, -8.000000) " points="4 8 11 3 11 13"></polygon>
+    </g>
+</svg>

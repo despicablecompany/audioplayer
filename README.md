@@ -1,2 +1,3 @@
 # audioplayer
-Multi-track audio player made with Juce
+
+Simple multi-track audio player made with JUCE.

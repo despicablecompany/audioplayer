@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="SrzEIR" name="AudioPlayer" projectType="guiapp" jucerVersion="5.4.3"
+              bundleIdentifier="com.oclero.audioplayer" companyName="Olivier Cl&#233;ro"
+              companyCopyright="Olivier Cl&#233;ro" companyEmail="oclero@hotmail.com">
+  <MAINGROUP id="ovFmNc" name="AudioPlayer">
+    <GROUP id="{2414F53E-01D0-3574-6B51-F007516BBD2D}" name="Source">
+      <GROUP id="{CB54163E-DE60-C8B8-7624-4D226705FC85}" name="app">
+        <FILE id="ehBDs0" name="MainComponent.cpp" compile="1" resource="0"
+              file="Source/app/MainComponent.cpp"/>
+        <FILE id="vZ5R4z" name="MainComponent.h" compile="0" resource="0" file="Source/app/MainComponent.h"/>
+        <FILE id="kaxwBR" name="MainWindow.cpp" compile="1" resource="0" file="Source/app/MainWindow.cpp"/>
+        <FILE id="IMZlTJ" name="MainWindow.h" compile="0" resource="0" file="Source/app/MainWindow.h"/>
+        <FILE id="H7KtTn" name="MasterTrack.cpp" compile="1" resource="0" file="Source/app/MasterTrack.cpp"/>
+        <FILE id="RUMlr2" name="MasterTrack.h" compile="0" resource="0" file="Source/app/MasterTrack.h"/>
+        <FILE id="rkAcsx" name="Toolbar.cpp" compile="1" resource="0" file="Source/app/Toolbar.cpp"/>
+        <FILE id="Eg6QQm" name="Toolbar.h" compile="0" resource="0" file="Source/app/Toolbar.h"/>
+        <FILE id="TYjB8x" name="Track.cpp" compile="1" resource="0" file="Source/app/Track.cpp"/>
+        <FILE id="zAUU7M" name="Track.h" compile="0" resource="0" file="Source/app/Track.h"/>
+      </GROUP>
+      <GROUP id="{949FB0C8-576E-A6B0-2043-6F03D38C1FEB}" name="audio">
+        <FILE id="H9iWmh" name="AbstractProcessor.cpp" compile="1" resource="0"
+              file="Source/audio/AbstractProcessor.cpp"/>
+        <FILE id="Sl05KW" name="AbstractProcessor.h" compile="0" resource="0"
+              file="Source/audio/AbstractProcessor.h"/>
+        <FILE id="aVhbbW" name="MasterTrackProcessor.cpp" compile="1" resource="0"
+              file="Source/audio/MasterTrackProcessor.cpp"/>
+        <FILE id="HVigPb" name="MasterTrackProcessor.h" compile="0" resource="0"
+              file="Source/audio/MasterTrackProcessor.h"/>
+        <FILE id="CrPP41" name="TrackProcessor.cpp" compile="1" resource="0"
+              file="Source/audio/TrackProcessor.cpp"/>
+        <FILE id="fijr7s" name="TrackProcessor.h" compile="0" resource="0"
+              file="Source/audio/TrackProcessor.h"/>
+      </GROUP>
+      <GROUP id="{A86B4BF1-E044-088F-A3F4-24512CAD2E47}" name="ui">
+        <FILE id="OtVO1a" name="IconButton.cpp" compile="1" resource="0" file="Source/ui/IconButton.cpp"/>
+        <FILE id="rbdEfZ" name="IconButton.h" compile="0" resource="0" file="Source/ui/IconButton.h"/>
+        <FILE id="s9UxMw" name="Slider.cpp" compile="1" resource="0" file="Source/ui/Slider.cpp"/>
+        <FILE id="RhBLcD" name="Slider.h" compile="0" resource="0" file="Source/ui/Slider.h"/>
+        <FILE id="V4BxqV" name="SliderWithLabel.cpp" compile="1" resource="0"
+              file="Source/ui/SliderWithLabel.cpp"/>
+        <FILE id="TGzWYG" name="SliderWithLabel.h" compile="0" resource="0"
+              file="Source/ui/SliderWithLabel.h"/>
+        <FILE id="cQizG0" name="ToolbarButton.cpp" compile="1" resource="0"
+              file="Source/ui/ToolbarButton.cpp"/>
+        <FILE id="aRU0IS" name="ToolbarButton.h" compile="0" resource="0" file="Source/ui/ToolbarButton.h"/>
+      </GROUP>
+      <GROUP id="{ED197AB0-8A3A-EB9A-E345-698BCAF8EC71}" name="utils">
+        <FILE id="IRruWE" name="ResourceHelper.cpp" compile="1" resource="0"
+              file="Source/utils/ResourceHelper.cpp"/>
+        <FILE id="vEflrm" name="ResourceHelper.h" compile="0" resource="0"
+              file="Source/utils/ResourceHelper.h"/>
+      </GROUP>
+      <FILE id="MRlsEO" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+    </GROUP>
+    <GROUP id="{68514074-7662-E2B7-BB33-6D729BCC6379}" name="Resources">
+      <FILE id="CX42lZ" name="forward.svg" compile="0" resource="1" file="Resources/forward.svg"/>
+      <FILE id="yDteLM" name="mute.svg" compile="0" resource="1" file="Resources/mute.svg"/>
+      <FILE id="LrjH0G" name="headphones.svg" compile="0" resource="1" file="Resources/headphones.svg"
+            xcodeResource="0"/>
+      <FILE id="jrdWgz" name="pause.svg" compile="0" resource="1" file="Resources/pause.svg"/>
+      <FILE id="rnbMMV" name="play.svg" compile="0" resource="1" file="Resources/play.svg"/>
+      <FILE id="VNmHpz" name="rewind.svg" compile="0" resource="1" file="Resources/rewind.svg"/>
+      <FILE id="K4vodg" name="loop.svg" compile="0" resource="1" file="Resources/loop.svg"/>
+      <FILE id="jdkrJ0" name="stop.svg" compile="0" resource="1" file="Resources/stop.svg"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <XCODE_MAC targetFolder="Builds/MacOSX">
+      <CONFIGURATIONS>
+        <CONFIGURATION isDebug="1" name="Debug"/>
+        <CONFIGURATION isDebug="0" name="Release"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_audio_basics" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_audio_utils" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="../../../JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="../../../JUCE/modules"/>
+      </MODULEPATHS>
+    </XCODE_MAC>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULE id="juce_audio_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_devices" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_formats" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_processors" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_audio_utils" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_core" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_cryptography" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_data_structures" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_events" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_graphics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_basics" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+    <MODULE id="juce_opengl" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
+  </MODULES>
+  <LIVE_SETTINGS>
+    <OSX/>
+  </LIVE_SETTINGS>
+  <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1"/>
+</JUCERPROJECT>
