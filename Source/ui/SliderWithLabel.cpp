@@ -4,20 +4,21 @@ namespace audioplayer {
     juce::String SliderWithLabel::GainValueFormatter::getTextForValue(double value) {
         if (value == 0) {
             return "-" + juce::String(juce::CharPointer_UTF8("\u221e")) + "dB";
+        } else if (std::abs(value - getCenter()) < 0.01)  {
+            return "0dB";
         } else {
             const auto knee = 7;
             const auto min = -60; // dB
             const auto max = 12; // dB
             const auto nonlinear_value =  1 - (1 - value) / std::powf(1 - std::powf(1 - value, knee), 1 / knee);
             auto denormalized_value = nonlinear_value * (max - min) + min;
-            return (denormalized_value > 0 ? juce::String("+") : juce::String("")) + juce::String(std::floor(denormalized_value)) + "dB";
+            return (denormalized_value > 0 ? juce::String("+") : juce::String("")) + juce::String(denormalized_value, 1) + "dB";
         }
     }
     
     double SliderWithLabel::GainValueFormatter::getCenter() {
-        // TODO Find the zero
         // Resolve equation 0 = (1 - (1 - value) / std::powf(1 - std::powf(1 - value, knee), 1 / knee)) * (max - min) + min
-        return 0.5;
+        return 0.833337500178641;
     }
         
     juce::String SliderWithLabel::PanValueFormatter::getTextForValue(double value) {
@@ -113,9 +114,12 @@ namespace audioplayer {
     void SliderWithLabel::setValueFormatter(ValueFormatter *f) {
         formatter.reset(f);
         if(formatter) {
-            slider.setDoubleClickReturnValue(true, formatter->getCenter());
+            auto center = formatter->getCenter();
+            slider.setDoubleClickReturnValue(true, center);
+            slider.setValue(center);
         } else {
             slider.setDoubleClickReturnValue(true, 0.5);
+            slider.setValue(0.5);
         }
         updateValueLabel();
     }
